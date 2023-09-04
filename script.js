@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 const count = document.getElementById("count");
 const amount = document.getElementById("amount");
 const select = document.getElementById("movie");
-const seats = document.querySelectorAll(".seat:not(.reserved");
+const seats = document.querySelectorAll(".seat:not(.reserved)");
 
 getFromLocalStorage();
 calculateTotal();
@@ -52,7 +52,7 @@ function calculateTotal() {
 
 function getFromLocalStorage() {
   const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
-  if ((selectedSeats != null) & (selectedSeats.length > 0)) {
+ if (selectedSeats != null && selectedSeats.length > 0) {
     seats.forEach(function (seat, index) {
       if (selectedSeats.indexOf(index) > -1) {
         seat.classList.add("selected");
